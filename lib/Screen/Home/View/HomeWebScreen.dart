@@ -21,8 +21,13 @@ class _HomeWebScreenState extends State<HomeWebScreen> {
         Provider.of<HomeScreenProvider>(context, listen: true);
     return SafeArea(
       child: Scaffold(
+        appBar: AppBar(
+          backgroundColor: Colors.black,
+        ),
+        backgroundColor: Colors.black,
         body: WebViewWidget(
-          controller: homeScreenProviderfalse!.webViewController!,),
+          controller: homeScreenProviderfalse!.webViewController!,
+        ),
       ),
     );
   }
