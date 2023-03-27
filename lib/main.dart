@@ -1,4 +1,5 @@
 import 'package:all_in_app/Screen/First/View/FirstScreen.dart';
+import 'package:all_in_app/Screen/Flash/View/FlashScreen.dart';
 import 'package:all_in_app/Screen/Home/Provider/HomeScreenProvider.dart';
 import 'package:all_in_app/Screen/Home/View/HomeScreen.dart';
 import 'package:all_in_app/Screen/Home/View/HomeWebScreen.dart';
@@ -14,10 +15,12 @@ void main() {
         ),
       ],
       child: MaterialApp(
+        debugShowCheckedModeBanner: false,
         routes: {
-          '/': (context) => FirstScreen(),
-          'home': (context) => HomeScreen(),
-          'web': (context) => HomeWebScreen(),
+          '/': (context) => const FlashScreen(),
+          'first': (context) => const FirstScreen(),
+          'home': (context) => const HomeScreen(),
+          'web': (context) => const HomeWebScreen(),
         },
       ),
     ),
