@@ -1,26 +1,25 @@
-import 'package:all_in_app/Screen/Food/Provider/FoodScreenProvider.dart';
+import 'package:all_in_app/Screen/Entertainment/Provider/EntertainmentScreenProvider.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
 
-class FoodScreen extends StatefulWidget {
-  const FoodScreen({Key? key}) : super(key: key);
+class EntertainmentScreen extends StatefulWidget {
+  const EntertainmentScreen({Key? key}) : super(key: key);
 
   @override
-  State<FoodScreen> createState() => _FoodScreenState();
+  State<EntertainmentScreen> createState() => _EntertainmentScreenState();
 }
 
-class _FoodScreenState extends State<FoodScreen> {
-  FoodScreenProvider? foodScreenProviderTrue;
-  FoodScreenProvider? foodScreenProviderFalse;
+class _EntertainmentScreenState extends State<EntertainmentScreen> {
+  EntertainmentScreenProvider? entertainmentScreenProviderTrue;
+  EntertainmentScreenProvider? entertainmentScreenProviderFalse;
 
   @override
   Widget build(BuildContext context) {
-    foodScreenProviderFalse =
-        Provider.of<FoodScreenProvider>(context, listen: false);
-    foodScreenProviderTrue =
-        Provider.of<FoodScreenProvider>(context, listen: true);
-
+    entertainmentScreenProviderFalse =
+        Provider.of<EntertainmentScreenProvider>(context, listen: false);
+    entertainmentScreenProviderTrue =
+        Provider.of<EntertainmentScreenProvider>(context, listen: true);
     return SafeArea(
       child: Scaffold(
         appBar: AppBar(
@@ -37,28 +36,27 @@ class _FoodScreenState extends State<FoodScreen> {
         body: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            const SizedBox(height: 30),
+            SizedBox(height: 30),
             Padding(
-              padding: const EdgeInsets.all(8.0),
+              padding: EdgeInsets.all(8.0),
               child: Text(
                 "Good Evening",
-                style:
-                    GoogleFonts.philosopher(color: Colors.white, fontSize: 40),
+                style: GoogleFonts.philosopher(color: Colors.white, fontSize: 40),
               ),
             ),
             const SizedBox(height: 40),
             Expanded(
               child: GridView.builder(
-                gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
+                gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
                     crossAxisCount: 2),
-                itemCount: foodScreenProviderFalse!.Link3.length,
+                itemCount: entertainmentScreenProviderFalse!.Link2.length,
                 itemBuilder: (context, index) {
                   return Padding(
-                    padding: const EdgeInsets.all(8.0),
+                    padding: EdgeInsets.all(8.0),
                     child: InkWell(
                       onTap: () {
-                        foodScreenProviderFalse!.loadurl3(index);
-                        Navigator.pushNamed(context, 'food web');
+                        entertainmentScreenProviderFalse!.loadurl2(index);
+                        Navigator.pushNamed(context, 'entertainment web');
                       },
                       child: Container(
                         height: 50,
@@ -72,12 +70,12 @@ class _FoodScreenState extends State<FoodScreen> {
                           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                           children: [
                             Image.asset(
-                              "${foodScreenProviderFalse!.Images3[index]}",
+                              "${entertainmentScreenProviderFalse!.Images2[index]}",
                               height: 100,
                               width: double.infinity,
                             ),
                             Text(
-                              "${foodScreenProviderFalse!.Name3[index]}",
+                              "${entertainmentScreenProviderFalse!.Name2[index]}",
                               style: GoogleFonts.philosopher(
                                 color: Colors.white,
                                 fontSize: 25,

@@ -12,14 +12,23 @@ class FlashScreen extends StatefulWidget {
 class _FlashScreenState extends State<FlashScreen> {
   @override
   Widget build(BuildContext context) {
-    Timer(Duration(seconds: 3), () {
+    Timer(Duration(seconds: 10), () {
       Navigator.pushReplacementNamed(context, "bottom");
     });
     return SafeArea(
       child: Scaffold(
         backgroundColor: Colors.black,
         body: Center(
-          child: Image.asset("Assets/Images/1.png"),
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+            children: [
+              Image.asset("Assets/Images/1.png"),
+              CircularProgressIndicator(
+                color: Colors.green,
+                backgroundColor: Colors.white,
+              ),
+            ],
+          ),
         ),
       ),
     );

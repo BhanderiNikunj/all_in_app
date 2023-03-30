@@ -28,8 +28,7 @@ class _LearningScreenWebState extends State<LearningScreenWeb> {
         ),
         backgroundColor: Colors.black,
         body: WebViewWidget(
-          controller: learningScreenProviderFalse!.webViewController!,
-          layoutDirection: TextDirection.ltr,
+          controller: learningScreenProviderFalse!.webViewController1!,
         ),
       ),
     );

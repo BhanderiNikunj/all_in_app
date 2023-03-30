@@ -3,31 +3,31 @@ import 'package:webview_flutter/webview_flutter.dart';
 
 class LearningScreenProvider extends ChangeNotifier{
 
-  WebViewController? webViewController;
+  WebViewController? webViewController1;
 
   List Link1 = [
-    Uri.parse("https://www.netflix.com/in/"),
-    Uri.parse("https://www.hotstar.com/in"),
-    Uri.parse("https://www.primevideo.com/"),
-    Uri.parse("https://www.zee5.com/"),
+    Uri.parse("https://www.wikipedia.org/"),
+    Uri.parse("https://www.w3schools.com/"),
+    Uri.parse("https://www.javatpoint.com/"),
+    Uri.parse("https://www.tutorialspoint.com/index.htm"),
   ];
   List Name1 = [
-    "netflix",
-    "hotstar",
-    "amazon prime video",
-    "ZEE5",
+    "Wikipedia",
+    "W3School",
+    "Javatpoint",
+    "tutorialspoint",
   ];
   List Images1 = [
-    "Assets/Images/netflix.jpg",
-    "Assets/Images/Disney+Hotstar.png",
-    "Assets/Images/primevideo.png",
-    "Assets/Images/zee5.jpg",
+    "Assets/Images/wikipedia.png",
+    "Assets/Images/W3School.png",
+    "Assets/Images/javatpoint.png",
+    "Assets/Images/tutorialspoint.png",
   ];
 
 
   void loadurl1(int index) {
-    webViewController = WebViewController();
-    webViewController!.loadRequest(
+    webViewController1 = WebViewController();
+    webViewController1!.loadRequest(
       Uri.parse(
         "${Link1[index]}",
       ),
