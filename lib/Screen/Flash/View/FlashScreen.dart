@@ -13,7 +13,7 @@ class _FlashScreenState extends State<FlashScreen> {
   @override
   Widget build(BuildContext context) {
     Timer(Duration(seconds: 3), () {
-      Navigator.pushReplacementNamed(context, "first");
+      Navigator.pushReplacementNamed(context, "bottom");
     });
     return SafeArea(
       child: Scaffold(
